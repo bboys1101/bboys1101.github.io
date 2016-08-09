@@ -3,14 +3,26 @@
 <head>
   <meta charset="utf-8">
   
-  <title>CHIAFENGROCKS</title>
+  <title>Journey of SVG -- (1) &quot;Drawing&quot; | CHIAFENGROCKS</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="CHIAFENGROCKS">
-<meta property="og:url" content="https://bboys1101.github.io/index.html">
+  <meta name="description" content="Preface
+Recently, I’ve started my study about the basic of SVG, just because I thought I would use it quite often in my current job(but actually not), nevertheless it’s always amazing to see how svg c">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Journey of SVG -- (1) "Drawing"">
+<meta property="og:url" content="https://bboys1101.github.io/2016/08/09/Journey_of_SVG(1)/index.html">
 <meta property="og:site_name" content="CHIAFENGROCKS">
+<meta property="og:description" content="Preface
+Recently, I’ve started my study about the basic of SVG, just because I thought I would use it quite often in my current job(but actually not), nevertheless it’s always amazing to see how svg c">
+<meta property="og:image" content="https://bboys1101.github.io/Screen Shot 2016-08-01 at 3.21.46 pm.png">
+<meta property="og:image" content="https://bboys1101.github.io/Screen Shot 2016-08-01 at 3.21.05 pm.png">
+<meta property="og:image" content="https://bboys1101.github.io/001.jpg">
+<meta property="og:image" content="https://bboys1101.github.io/svg_v2.gif">
+<meta property="og:updated_time" content="2016-08-09T12:25:35.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CHIAFENGROCKS">
+<meta name="twitter:title" content="Journey of SVG -- (1) "Drawing"">
+<meta name="twitter:description" content="Preface
+Recently, I’ve started my study about the basic of SVG, just because I thought I would use it quite often in my current job(but actually not), nevertheless it’s always amazing to see how svg c">
+<meta name="twitter:image" content="https://bboys1101.github.io/Screen Shot 2016-08-01 at 3.21.46 pm.png">
   
     <link rel="alternate" href="/atom.xml" title="CHIAFENGROCKS" type="application/atom+xml">
   
@@ -59,9 +71,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-Journey_of_SVG(1)" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Journey_of_SVG(1)" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/08/09/Journey_of_SVG(1)/" class="article-date">
   <time datetime="2016-08-09T12:23:57.000Z" itemprop="datePublished">2016-08-09</time>
@@ -74,8 +84,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/09/Journey_of_SVG(1)/">Journey of SVG -- (1) &quot;Drawing&quot;</a>
+    <h1 class="article-title" itemprop="name">
+      Journey of SVG -- (1) &quot;Drawing&quot;
     </h1>
   
 
@@ -121,108 +131,19 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-Intro" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/07/31/Intro/" class="article-date">
-  <time datetime="2016-07-31T04:19:41.000Z" itemprop="datePublished">2016-07-31</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/31/Intro/">Build A Blog on Git-Page with Hexo -- (1)</a>
-    </h1>
+    <a href="/2016/07/31/Intro/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ouder</strong>
+      <div class="article-nav-title">Build A Blog on Git-Page with Hexo -- (1)</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Preface"><a href="#Preface" class="headerlink" title="- Preface"></a><em>- Preface</em></h2><p>Building a blog and writing articles to share what you learned recently with people on internet, is always a practical method for developers to record their track of learning, this is the reason why I decided to give it a go, starting to build one. Meanwhile, there are serveral reasons I recommend you can have your own blog on gh-pages of github.</p>
-<ol>
-<li>It’s <strong>free</strong> to have your site within 300MB.</li>
-<li>It’s <strong>on github</strong>, this means it will be easier to find solutions when you are dealing issues.</li>
-<li>You can write your article in <strong>Markdown</strong>, super easy since it is the simplified version fo WYSIWYG(what your see is what you get).</li>
-</ol>
-<p>Before starting, I’ve searched for a while for choosing the framework, I found that <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a> is famous for easy-to-use, light-weight building, therefore, I think there is no reason for me not to use it.</p>
-<h3 id="01-Requirements"><a href="#01-Requirements" class="headerlink" title="01. Requirements"></a>01. Requirements</h3><p>First, you will need to install:</p>
-<ul>
-<li><a href="https://nodejs.org/en/" target="_blank" rel="external">Nodejs</a></li>
-<li><a href="https://github.com/" target="_blank" rel="external">Git</a></li>
-</ul>
-<h3 id="02-Install-Hexo"><a href="#02-Install-Hexo" class="headerlink" title="02. Install Hexo"></a>02. Install Hexo</h3><p>After setting up your environment, time for installing Hexo on your computer.<br>It’s super easy to install Hexo with the command below.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install -g hexo-cli</div></pre></td></tr></table></figure></p>
-<p>Once the installation is done, the following commands will help you to init Hexo in target folder.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ hexo init &lt;folder&gt;</div><div class="line">$ <span class="built_in">cd</span> &lt;folder&gt;</div><div class="line">$ npm install</div></pre></td></tr></table></figure>
-<p>Then you can run the server, it will be seen on <strong>localhost:4000</strong> on local side.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure></p>
-<!-- ![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png) -->
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://bboys1101.github.io/2016/07/31/Intro/" data-id="cirnfwci800002boi8f40rm1i" class="article-share-link">Delen</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/07/24/hello-world/" class="article-date">
-  <time datetime="2016-07-24T09:00:53.000Z" itemprop="datePublished">2016-07-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/24/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://bboys1101.github.io/2016/07/24/hello-world/" data-id="cirnfwcig00022boir3si7l8m" class="article-share-link">Delen</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 </section>
         
