@@ -10,6 +10,9 @@
 
     <!--Description-->
     
+        <meta name="description" content="Customizing Radio
+I never take it serious about the radio of input until recently, a landing page required me to customizing it, and then I found out ">
+    
 
     <!--Author-->
     
@@ -18,7 +21,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="CHIA BLOG"/>
+        <meta property="og:title" content="Customizing Radio in BEM"/>
     
 
     <!--Open Graph Description-->
@@ -29,7 +32,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -40,7 +43,7 @@
 
     <!-- Title -->
     
-    <title>Archives: 2016/9 - CHIA BLOG</title>
+    <title>Customizing Radio in BEM - CHIA BLOG</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -115,63 +118,91 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('./img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>2016/9</h1>
+                <div class="post-heading">
+                    <h1>Customizing Radio in BEM</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2016-11-14
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2016/09/29/Building_a_Simple_Toggle_UI/">
-        <h1 class="post-title archive">
-            Building a Simple Toggle UI
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-09-29
-    </p>
-</div>
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h1 id="Customizing-Radio"><a href="#Customizing-Radio" class="headerlink" title="Customizing Radio"></a>Customizing Radio</h1><blockquote>
+<p>I never take it serious about the <strong>radio of input</strong> until recently, a landing page required me to customizing it, and then I found out there are some tips can help me to build a radio in a way I want.</p>
+</blockquote>
+<h2 id="Typical-Looking"><a href="#Typical-Looking" class="headerlink" title="Typical Looking"></a>Typical Looking</h2><p>I am not sure what about other Devs, for me, the first thought came into my mind for <strong>customizing radio</strong>, is inspecting the css, and overwriting the style attributes, however, this will lead me to a tough situation that no one would ever want to face.</p>
+<p><img src="JLiqT.png" alt=""></p>
+<p><em>Trust me, you don’t want to fight with this directly.</em></p>
+<h2 id="So-how-can-we-achieve-it"><a href="#So-how-can-we-achieve-it" class="headerlink" title="So how can we achieve it?"></a>So how can we achieve it?</h2><p>Basically, there are three features that can help us to achieve it.</p>
+<ol>
+<li><strong>element+element selector</strong> in CSS.</li>
+<li><figure class="highlight plain"><figcaption><span>toggles the control of radio.</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">For example, if we want to build a radio like below, we can follow the next steps.</div><div class="line"></div><div class="line">![](snkr.jpg)</div><div class="line"></div><div class="line">Step_1:&lt;br/&gt;</div><div class="line">Hiding the ugly radio, set it&apos;s css attribute like this</div></pre></td></tr></table></figure>
+<p> input[type=”radio”]:not(:checked),<br> input[type=”radio”]:checked{<br>   position: absolute;<br>   left:-9999px;<br> }</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">Step_2:&lt;br/&gt;</div><div class="line">Set the label in the style you want, and the point is, we want it look different after we click the label.</div><div class="line"></div><div class="line">By clicking the label, we can toggle the radio to be checked, and there will be 2 different status in attribute &quot;checked&quot;, like below:</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>//unactive</p>
+<p><input type="radio" checked><br>//active</p>
+<p><input type="radio" checked="checked"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">This feature will help us to control the difference of label, by using **element+element selector** in CSS.</div></pre></td></tr></table></figure></p>
+<p>&amp;__radio:checked + label {<br>      background: $yellow;<br>      color:#000;<br>    }</p>
+<pre><code>&amp;__label {
+  padding: 24px 0px;
+  text-align: center;
+  flex: 1 30%;
+  margin: 0px 10px;
+  border: 1px solid;
+  font-size: 1.8rem;
+  cursor: pointer; 
+  @include transition(all, 0.2s);
+
+  &amp;:hover {
+    transform: scale(1.05);
+    @include transition(all, 0.2s);
+  }
+</code></pre><p>}<br>```</p>
+<p>Apparently, if the label is clicked, it triggers the radio to be checked, and then the label will have different background color.</p>
+<p>You can check out the example <a href="http://codepen.io/BrxTsai/full/ALJvAr/" target="_blank" rel="external">here</a>.</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
             
-                <div class="post-preview">
-    <a href="/2016/09/22/BEM/">
-        <h1 class="post-title archive">
-            Learning BEM
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-09-22
-    </p>
-</div>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
             
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
-</ul>
         </div>
     </div>
-</div>
-
-
+</article>
 
     <!-- Footer -->
     <hr />
