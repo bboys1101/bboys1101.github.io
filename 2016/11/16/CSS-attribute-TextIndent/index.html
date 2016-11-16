@@ -10,6 +10,8 @@
 
     <!--Description-->
     
+        <meta name="description" content="Why I Talk About TextIndentRecently, I’ve found I wasn’t paying enough attention to semantic html for my previous project, which made me feel guilty a">
+    
 
     <!--Author-->
     
@@ -18,7 +20,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="CHIA BLOG"/>
+        <meta property="og:title" content="CSS attribute--TextIndent"/>
     
 
     <!--Open Graph Description-->
@@ -29,7 +31,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -40,7 +42,7 @@
 
     <!-- Title -->
     
-    <title>Archiv: 2016/10 - CHIA BLOG</title>
+    <title>CSS attribute--TextIndent - CHIA BLOG</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -115,63 +117,75 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('./img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>2016/10</h1>
+                <div class="post-heading">
+                    <h1>CSS attribute--TextIndent</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2016-11-16
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2016/10/19/Tags/">
-        <h1 class="post-title archive">
-            Implementing DoubleClick Floodlight Tags
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-10-19
-    </p>
-</div>
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h1 id="Why-I-Talk-About-TextIndent"><a href="#Why-I-Talk-About-TextIndent" class="headerlink" title="Why I Talk About TextIndent"></a>Why I Talk About TextIndent</h1><p>Recently, I’ve found I wasn’t paying enough attention to <strong>semantic html</strong> for my previous project, which made me feel guilty and embrassed. After all, I always think of myself as a great helper in digital territory for my clients.</p>
+<p>Well, it’s never too late to start picking up and building my foundation, during this whole process of studying, there is one question stuck my mind, </p>
+<blockquote>
+<p>How people deal with logo when they also want to put the text inside of the tag so search engine can parse?</p>
+</blockquote>
+<p>I’ve browsed many websites, seem many different ways to build the logo, however, there is a specific way attracts my attention.</p>
+<p><img src="./img/paypal.jpg" alt=""> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">// The html of logo</div><div class="line">&lt;div class=&quot;pypl-logo-wrapper&quot;&gt;</div><div class="line">    &lt;a href=&quot;https://www.paypal.com/au/webapps/mpp/home&quot; class=&quot;pypl-logo pypl-logo--white&quot;&gt;</div><div class="line">      PayPal</div><div class="line">    &lt;/a&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p><br></p>
+<blockquote>
+<h3 id="Where-da-hell-is-the-text-inside-the-lt-a-gt-tag-I-couldn’t-see-it"><a href="#Where-da-hell-is-the-text-inside-the-lt-a-gt-tag-I-couldn’t-see-it" class="headerlink" title="Where da hell is the text inside the &lt;a&gt; tag? I couldn’t see it."></a>Where da hell is the text inside the <code>&lt;a&gt;</code> tag?<br> I couldn’t see it.</h3></blockquote>
+<p><br><br>I kept asking myself, because the only one thing exist on the website is the logo image, that’s a goddamn magic. </p>
+<p>Thanks to the inspector, I notice that there is a css attribute called <code>text-indent</code> which I don’t know what it is, and this is how we meet.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">//CSS code from paypal</div><div class="line">.pypl-logo--white &#123;</div><div class="line">    display: inline-block;</div><div class="line">    width: 136px;</div><div class="line">    height: 43px;</div><div class="line">    overflow: hidden;</div><div class="line">    text-indent: -999em;  ===&gt; Hands up!! Stranger</div><div class="line">    background: transparent url(https://www.paypalobjects.com/webstatic/i/logo/rebrand/ppcom-white.svg) center center no-repeat;</div><div class="line">    background-size: 93pt 33px;</div><div class="line">    vertical-align: middle;</div><div class="line">    padding-top: 5px;</div><div class="line">    margin-top: -7px;</div><div class="line">    position: absolute;</div><div class="line">    top: 21px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="What-is-Text-indent"><a href="#What-is-Text-indent" class="headerlink" title="What is Text-indent"></a>What is Text-indent</h1><p>According to w3schools, <strong>the text-indent property specifies the indentation of the first line in a text-block.</strong> For example, if you want to make a layout looks like this<br><br><br><img src="./img/example-01.jpg" alt=""><br><em>–Pic from <a href="https://www.behance.net/thenegra" target="_blank" rel="external">The Negra</a></em></p>
+<p>You will only need to set the value in number larger than 0,</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">text-indent: 20px;</div></pre></td></tr></table></figure>
+<p>So you can image that if you set the negative number, the first line will move toward to left.</p>
+<h1 id="How-to-use-it-for-this-case"><a href="#How-to-use-it-for-this-case" class="headerlink" title="How to use it for this case"></a>How to use it for this case</h1><p>The concept is setting a very large number, no matter it is larger than 0 or less than 0, just make it move with a long distance, so it will disappear from the screen, and then we use <code>background-img</code> to show the logo, in this we can meet the requirement from the search engine, so it can be parsed as a logo with clear text, meanwhile we can show the image on the website, what a great solution.</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
             
-                <div class="post-preview">
-    <a href="/2016/10/17/Shortcut/">
-        <h1 class="post-title archive">
-            Working Note -- Compress Shortcut
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-10-17
-    </p>
-</div>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
             
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
-</ul>
         </div>
     </div>
-</div>
-
-
+</article>
 
     <!-- Footer -->
     <hr />
