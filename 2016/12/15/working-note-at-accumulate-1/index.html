@@ -10,6 +10,8 @@
 
     <!--Description-->
     
+        <meta name="description" content="What!? JSON not updating!I have been working on E-Mail template generator with Nunjucks and Gulp recently.In the gulpfile.js, I built a task which can">
+    
 
     <!--Author-->
     
@@ -18,7 +20,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="CHIA BLOG"/>
+        <meta property="og:title" content="Working Note @Accumulate(1)"/>
     
 
     <!--Open Graph Description-->
@@ -29,7 +31,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -40,7 +42,7 @@
 
     <!-- Title -->
     
-    <title>Archiv - CHIA BLOG</title>
+    <title>Working Note @Accumulate(1) - CHIA BLOG</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -115,154 +117,62 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('./img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>Archiv</h1>
+                <div class="post-heading">
+                    <h1>Working Note @Accumulate(1)</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2016-12-15
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2016/12/15/working-note-at-accumulate-1/">
-        <h1 class="post-title archive">
-            Working Note @Accumulate(1)
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-12-15
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2016/11/16/CSS-attribute-TextIndent/">
-        <h1 class="post-title archive">
-            CSS attribute--TextIndent
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-11-16
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2016/11/14/Customizing-Radio-in-BEM/">
-        <h1 class="post-title archive">
-            Customizing Radio in BEM
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-11-14
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2016/10/19/Tags/">
-        <h1 class="post-title archive">
-            Implementing DoubleClick Floodlight Tags
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-10-19
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2016/10/17/Shortcut/">
-        <h1 class="post-title archive">
-            Working Note -- Compress Shortcut
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-10-17
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2016/09/29/Building_a_Simple_Toggle_UI/">
-        <h1 class="post-title archive">
-            Building a Simple Toggle UI
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-09-29
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2016/09/22/BEM/">
-        <h1 class="post-title archive">
-            Learning BEM
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-09-22
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2016/08/09/Journey_of_SVG(1)/">
-        <h1 class="post-title archive">
-            Journey of SVG -- (1) "Drawing"
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-08-09
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2016/07/31/Intro/">
-        <h1 class="post-title archive">
-            Build A Blog on Git-Page with Hexo -- (1)
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-07-31
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h1 id="What-JSON-not-updating"><a href="#What-JSON-not-updating" class="headerlink" title="What!? JSON not updating!"></a>What!? JSON not updating!</h1><p>I have been working on E-Mail template generator with Nunjucks and Gulp recently.<br>In the gulpfile.js, I built a task which can allow us to inject data object to Nunjucks components,<br>so it can populate content from JSON file, however, I noticed that the content of static html wasn’t updated<br>when I changed the data.json, it should be working since the watching task has been done.<br>After searching for a while, I found out that actually node.js require() function has cache,<br>that’s the reason why it won’t update the content even the data.json is changed.</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>Delete the cache before require() running<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">delete require.cache[require.resolve(json)];</div></pre></td></tr></table></figure></p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
+<li><strong><a href="https://github.com/colynb/gulp-data/issues/11" target="_blank" rel="external">gulp-data issue</a></strong><br></li>
+<li><strong><a href="https://github.com/colynb/gulp-data/issues/17" target="_blank" rel="external">gulp-data issue</a></strong><br></li>
 </ul>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
         </div>
     </div>
-</div>
-
-
+</article>
 
     <!-- Footer -->
     <hr />
