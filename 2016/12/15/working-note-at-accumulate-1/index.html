@@ -10,7 +10,7 @@
 
     <!--Description-->
     
-        <meta name="description" content="What!? JSON not updating!I have been working on E-Mail template generator with Nunjucks and Gulp recently.In the gulpfile.js, I built a task which can">
+        <meta name="description" content="What!? JSON not updating!I have been working on E-Mail template generator with Nunjucks and Gulp recently. In the gulpfile.js, I built a task which ca">
     
 
     <!--Author-->
@@ -151,11 +151,12 @@
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <h1 id="What-JSON-not-updating"><a href="#What-JSON-not-updating" class="headerlink" title="What!? JSON not updating!"></a>What!? JSON not updating!</h1><p>I have been working on E-Mail template generator with Nunjucks and Gulp recently.<br>In the gulpfile.js, I built a task which can allow us to inject data object to Nunjucks components,<br>so it can populate content from JSON file, however, I noticed that the content of static html wasn’t updated<br>when I changed the data.json, it should be working since the watching task has been done.<br>After searching for a while, I found out that actually node.js require() function has cache,<br>that’s the reason why it won’t update the content even the data.json is changed.</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>Delete the cache before require() running<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">delete require.cache[require.resolve(json)];</div></pre></td></tr></table></figure></p>
+                <h1 id="What-JSON-not-updating"><a href="#What-JSON-not-updating" class="headerlink" title="What!? JSON not updating!"></a>What!? JSON not updating!</h1><p>I have been working on E-Mail template generator with Nunjucks and Gulp recently. In the gulpfile.js, I built a task which can allow us to inject data object to Nunjucks components, so it can populate content from JSON file, however, I noticed that the content of static html wasn’t updated when I changed the data.json, it should be working since the watching task has been done.</p>
+<p>After searching for a while, I found out that actually node.js require() function has cache, that’s the reason why it won’t update the content even the data.json is changed.</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>We just need to delete the cache before require() running, so we only have to paste the following code in task.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">delete require.cache[require.resolve(json)];</div></pre></td></tr></table></figure></p>
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
-<li><strong><a href="https://github.com/colynb/gulp-data/issues/11" target="_blank" rel="external">gulp-data issue</a></strong><br></li>
-<li><strong><a href="https://github.com/colynb/gulp-data/issues/17" target="_blank" rel="external">gulp-data issue</a></strong><br></li>
+<li><strong><a href="https://github.com/colynb/gulp-data/issues/11" target="_blank" rel="external">gulp-data issue 11</a></strong><br></li>
+<li><strong><a href="https://github.com/colynb/gulp-data/issues/17" target="_blank" rel="external">gulp-data issue 17</a></strong><br></li>
 </ul>
 
 
