@@ -158,6 +158,9 @@
 <li><strong><a href="https://github.com/colynb/gulp-data/issues/11" target="_blank" rel="external">gulp-data issue 11</a></strong><br></li>
 <li><strong><a href="https://github.com/colynb/gulp-data/issues/17" target="_blank" rel="external">gulp-data issue 17</a></strong><br></li>
 </ul>
+<h1 id="Hey-Where-is-my-media-queries"><a href="#Hey-Where-is-my-media-queries" class="headerlink" title="Hey! Where is my media queries?"></a>Hey! Where is my media queries?</h1><p>It’s a common sense that when we build e-mail, we should inline the css into html element tags, just for compatibility and for your own safety. My brilliant colleague has done this for me by including gulp-inline-css in the task, meanwhile, since being responsive is one of the requirements from clients, I put the style sheet for mobile device within <code>&lt;head&gt;&lt;/head&gt;</code> section. Now everything looks perfect and ready to go, until I found the output page isn’t responsive, oh my god…</p>
+<h2 id="What-happened-to-my-code"><a href="#What-happened-to-my-code" class="headerlink" title="What happened to my code?"></a>What happened to my code?</h2><p>When I opened the inspector to check <code>head</code> section, I couldn’t find media queries, then I realized that it’s because of gulp-inline-css, I felt stupid for trying to find it, so my question became <em>Can we inline the media queries?</em>, well, the answer is NO <a href="http://stackoverflow.com/questions/9808233/is-it-possible-to-put-css-media-rules-inline" target="_blank" rel="external">Check this</a>.<br>So we need to find out is there any option in gulp-css-inline, which can help us to solve this issue.</p>
+<h2 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution"></a>Solution</h2><p>Thanks to the package builder, there is a option <code>options.preserveMediaQueries</code>, which can prevent the task to inline the media queries, </p>
 
 
                 
