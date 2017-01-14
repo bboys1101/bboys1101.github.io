@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="Requirements of Current Project.After building E-Mail Generator, I am about to jump into the main project that our team are currently building togethe">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Chia Feng Tsai">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Working Note - Mobile First CSS"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="CHIA BLOG"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>Working Note - Mobile First CSS - CHIA BLOG</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">CHIA BLOG</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="http://chiafeng.rocks/">
+                            
+                                Portfolio
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/bboys1101">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('./img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Working Note - Mobile First CSS</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2017-01-12
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h1 id="Requirements-of-Current-Project"><a href="#Requirements-of-Current-Project" class="headerlink" title="Requirements of Current Project."></a>Requirements of Current Project.</h1><p>After building E-Mail Generator, I am about to jump into the main project that our team are currently building together. Mainly we are responsible for creating and testing the modularized html components of each sites, which is constructed by template engine - Jade, and using scss and BEM naming convention to edit the style sheet.</p>
+<p>Before jumping into this project, I was aware of that Mobile First CSS is the main concept of the process for building the site here. As a web developer, mobile first is a term that I am so familiar with, because everyone talks about it all the time. However, I’ve found that I actually don’t have a clear concept about <strong>Mobile First CSS</strong>, so I spent some time to do a deep learning about it, the following is my technical note about it.</p>
+<h1 id="What-is-Mobile-First-CSS"><a href="#What-is-Mobile-First-CSS" class="headerlink" title="What is Mobile First CSS?"></a>What is Mobile First CSS?</h1><h4 id="1-Mobile-First-Design-vs-Mobile-First-CSS"><a href="#1-Mobile-First-Design-vs-Mobile-First-CSS" class="headerlink" title="1. Mobile First Design vs Mobile First CSS."></a>1. Mobile First Design vs Mobile First CSS.</h4><p>Actually, they have nothing to do with each other, you can architect you style sheet in Mobile First method even the site isn’t Mobile First Design, like <a href="https://medium.com/@mrmrs_/mobile-first-css-48bc4cc3f60f#.z0c9v7jqh" target="_blank" rel="external">mrmrs mentioned in his article</a>,</p>
+<blockquote>
+<p>Mobile-first CSS has to do with how you architect your code and media queries, as well as how browsers parse your CSS.</p>
+</blockquote>
+<p>With that concept in mind, I can develop our css code from mobile version instead of thinking desktop first like I used to do before.</p>
+<h4 id="2-The-Way-I-used-to-architect-CSS"><a href="#2-The-Way-I-used-to-architect-CSS" class="headerlink" title="2. The Way I used to architect CSS."></a>2. The Way I used to architect CSS.</h4><p>The below example is my typical way to architect style sheet with media queries.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line">// ------ html</div><div class="line"></div><div class="line">&lt;nav&gt;</div><div class="line">&lt;ul&gt;</div><div class="line">&lt;li&gt;</div><div class="line">&lt;img src=&quot;img/pic.jpg&quot;/&gt;</div><div class="line">&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line">&lt;div&gt;&lt;/div&gt;</div><div class="line">&lt;/nav&gt;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">// ------ scss for Desktop</div><div class="line"></div><div class="line">nav &#123;</div><div class="line">  ul &#123;</div><div class="line">    width: 75%;</div><div class="line">    float: left;</div><div class="line"></div><div class="line">    li &#123;</div><div class="line">       img &#123;</div><div class="line">         display: black;</div><div class="line">       &#125;</div><div class="line">     &#125;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  div &#123;</div><div class="line">    width: 25%;</div><div class="line">    float: left;</div><div class="line">    background-image: url(img/pic.jpg);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">// ------ scss for Mobile</div><div class="line">@media only screen and (max-width: break-point)&#123;</div><div class="line">  nav ul &#123;</div><div class="line">    width: auto;</div><div class="line">    float: none;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  nav ul li img &#123;</div><div class="line">    display: none;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  nav div &#123;</div><div class="line">    display: none;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>The reason why the selector in media queries isn’t in a well-structured format is I select it directly from the inspector, try to fix the error in mobile version one by one, this is pretty straightforward while developing, definitely a nightmare for next Dev who jumps in to do update or solving bugs and issues, the reasons are below:</p>
+<ul>
+<li><p><strong>Not readable</strong>:<br>It’s definitely not straightforward for another Dev to understand which part this selector means, moreover, even myself can not understand it if I need to edit it in the future.</p>
+</li>
+<li><p><strong>Not easy to maintain</strong>:<br>Since it’s not readable, It would take more time to understand the whole code, even have to rebuild it.</p>
+</li>
+<li><p><strong>Make Dev has to be lazy:</strong><br>If some part of the site needs to be changed, it would be hard to find, therefore, it’s like forcing Dev to use <strong>!important</strong> way, which will make the style sheet become a mess(even it already is).</p>
+</li>
+</ul>
+<h1 id="What-if-it-is-Mobile-First-CSS"><a href="#What-if-it-is-Mobile-First-CSS" class="headerlink" title="What if it is Mobile First CSS?"></a>What if it is Mobile First CSS?</h1><p>If we architect the CSS code in Mobile First concept, it would look like below:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">// ------ scss</div><div class="line"></div><div class="line">nav &#123;</div><div class="line">  ul &#123;</div><div class="line">    @media only screen and (min-width: break-point)&#123;</div><div class="line">    width: 75%;</div><div class="line">      float: left;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    li &#123;</div><div class="line">      img &#123;</div><div class="line">        display: none;</div><div class="line"></div><div class="line">        @media only screen and (min-width: break-point)&#123;</div><div class="line">          display: block;</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  div &#123;</div><div class="line"></div><div class="line">    @media only screen and (min-width: break-point)&#123;</div><div class="line">      width: 25%;</div><div class="line">      float: left;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="Pros"><a href="#Pros" class="headerlink" title="Pros:"></a>Pros:</h4><h4 id="1-Browser-will-only-parse-the-necessary-code"><a href="#1-Browser-will-only-parse-the-necessary-code" class="headerlink" title="1. Browser will only parse the necessary code."></a>1. Browser will only parse the necessary code.</h4><p>As the example code above, we build the style attribute from mobile, so every code inside the media queries is for defining the wider device, like tablet and desktop, then browser will not parse these code if we are viewing the site by mobile. However, in desktop first CSS, the browser will parse the whole code for desktop no matter it is necessary or not.</p>
+<h4 id="2-Reducing-the-code"><a href="#2-Reducing-the-code" class="headerlink" title="2. Reducing the code."></a>2. Reducing the code.</h4><p>Since the default value width for<code>ul</code> and <code>div</code> is <code>&quot;auto&quot;</code>, it means we don’t have to specify it at mobile version, only need to write down different value in media queries for wider device, so we actually can write less code compare to Desktop First.</p>
+<h4 id="3-Avoid-downloading-unnecessary-image"><a href="#3-Avoid-downloading-unnecessary-image" class="headerlink" title="3. Avoid downloading unnecessary image."></a>3. Avoid downloading unnecessary image.</h4><p>According to this research done by Tim Kadlec, it reveals that the requests still happen EVEN we hide image by setting <code>display: none</code>in media queries for mobile device, this would cause browser has lower performance due to download unnecessary images. However, in Mobile First CSS design, we will not download the <code>background-img</code> until the width of browser is larger than break point, which makes mobile browsers could have better performance.</p>
+<p>I’ve written an example here, <a href="http://codepen.io/BrxTsai/pen/KadrGe" target="_blank" rel="external">http://codepen.io/BrxTsai/pen/KadrGe</a>.</p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ul>
+<li><a href="https://medium.com/@mrmrs_/mobile-first-css-48bc4cc3f60f#.6b66wzj79" target="_blank" rel="external">Mobile-first CSS</a></li>
+<li><a href="https://www.sitepoint.com/introduction-mobile-first-media-queries/" target="_blank" rel="external">An Introduction to Mobile-First Media Queries</a></li>
+<li><a href="https://zellwk.com/blog/how-to-write-mobile-first-css/" target="_blank" rel="external">How To Write Mobile-first CSS</a></li>
+<li><a href="https://timkadlec.com/2012/04/media-query-asset-downloading-results/" target="_blank" rel="external">Media Query &amp; Asset Downloading Results</a></li>
+</ul>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/bboys1101" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                        <li>
+                            <a href="https://www.linkedin.com/in/chia-feng-tsai-0ba1a860?trk=hp-identity-name" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                        <li>
+                            <a href="mailto:bboys1101@gmail.com" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">Original Content from Chia</p>
+                <!-- <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p> -->
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
