@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="Why I am talking about single page?These days, most requirements from my works were about building specific components of website, it may sound fashio">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Chia Feng Tsai">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="How I build a single page with video background"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="CHIA BLOG"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>How I build a single page with video background - CHIA BLOG</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">CHIA BLOG</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="http://chiafeng.rocks/">
+                            
+                                Portfolio
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/bboys1101">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('./img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>How I build a single page with video background</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2017-04-07
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h1 id="Why-I-am-talking-about-single-page"><a href="#Why-I-am-talking-about-single-page" class="headerlink" title="Why I am talking about single page?"></a>Why I am talking about single page?</h1><p>These days, most requirements from my works were about building specific components of website, it may sound <strong>fashion</strong> while developers could tell people he/she is working on some components stuff, but at same time, I couldn’t help but thinking about am I really getting better through this process.<br>Well, I guess I finally have the chance to find out the answer of this question.</p>
+<h1 id="New-Task"><a href="#New-Task" class="headerlink" title="New Task"></a>New Task</h1><p>Recently, I got a new task which required me to build a career page for our company, it’s simple, it’s static, it’s just a single page, and it also needs a video background on it’s banner, nothing sounds complex, however, I was excited about this task, I finally had a chance to build a whole new page from scratch for my job, and since there were several new knowledge I have learned during these period, I knew I can do it in a better way, and I was keen to find out how I would go through the whole process.</p>
+<h1 id="Requirements"><a href="#Requirements" class="headerlink" title="Requirements"></a>Requirements</h1><p>There are several requirements of this task.</p>
+<ul>
+<li>Background video auto played with position centered in any width desktop version.</li>
+<li>Grids different sequence in desktop and mobile version. (Fortunately we have Flex.)</li>
+<li>Hidden content, can be seen by clickable button. (Build a modal by JS)</li>
+<li>And of course, full responsive. (I prefer build CSS in Mobile First Design and BEM these days.)</li>
+</ul>
+<h1 id="Approaches"><a href="#Approaches" class="headerlink" title="Approaches"></a>Approaches</h1><p>First of all, I took a step back and thought about whole of it for a while,<br>I wanted this to be <strong>very simple</strong>, <strong>maintainable</strong>, and <strong>readable</strong>,<br>then I started to ask my self, what do I need to do first?</p>
+<h3 id="A-Great-Structure-Template"><a href="#A-Great-Structure-Template" class="headerlink" title="A Great Structure Template"></a>A Great Structure Template</h3><p>For sure, I would definitely need a template as a reference to build the file structure, so I searched it on github and decided to take this <a href="https://github.com/halibegic/merlin" target="_blank" rel="external">repo</a> as reference.<br>Why did I choose it? Well..</p>
+<ul>
+<li>Simple structure</li>
+<li>Just html</li>
+<li>No Gulp (No need to use Gulp since I use Prepros to compile less.)</li>
+</ul>
+<p><strong>File structure:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">project</div><div class="line">│   index.html</div><div class="line">│   README.md</div><div class="line">│   .gitignore</div><div class="line">│</div><div class="line">└───assets</div><div class="line">│   │</div><div class="line">│   └───img</div><div class="line">│   │   │   img-01.jpg</div><div class="line">│   │   │   img-02.jpg</div><div class="line">│   │   │   ...</div><div class="line">│   │</div><div class="line">│   └───video</div><div class="line">│       │   video.mp4</div><div class="line">│       │   ...</div><div class="line">│</div><div class="line">└───less</div><div class="line">│    └───style.less</div><div class="line">│</div><div class="line">└───css</div><div class="line">│    └───style.css</div><div class="line">│</div><div class="line">└───js</div><div class="line">│     └───main.js</div><div class="line">│</div><div class="line">└───role</div><div class="line">     │    role-01.html</div><div class="line">     │    role-02.html</div><div class="line">     │    ...</div></pre></td></tr></table></figure></p>
+<h1 id="Video-Background"><a href="#Video-Background" class="headerlink" title="Video Background"></a>Video Background</h1><p>In this task I have to put the video file with the project folder,<br>and then request it in html video element.<br>According to <a href="http://thenewcode.com/777/Create-Fullscreen-HTML5-Page-Background-Video" target="_blank" rel="external">tutorial article</a>, the following is the basic code for building html5 video.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">// html</div><div class="line">&lt;video playsinline autoplay muted loop poster=&quot;polina.jpg&quot; id=&quot;bgvid&quot;&gt;</div><div class="line">    &lt;source src=&quot;example.webm&quot; type=&quot;video/webm&quot;&gt;</div><div class="line">    &lt;source src=&quot;example.mp4&quot; type=&quot;video/mp4&quot;&gt;</div><div class="line">&lt;/video&gt;</div><div class="line"></div><div class="line">// css</div><div class="line">.video &#123;</div><div class="line">    position: fixed;</div><div class="line">    top: 50%;</div><div class="line">    left: 50%;</div><div class="line">    min-width: 100%;</div><div class="line">    min-height: 100%;</div><div class="line">    width: auto;</div><div class="line">    height: auto;</div><div class="line">    z-index: -100;</div><div class="line">    -ms-transform: translateX(-50%) translateY(-50%);</div><div class="line">    -moz-transform: translateX(-50%) translateY(-50%);</div><div class="line">    -webkit-transform: translateX(-50%) translateY(-50%);</div><div class="line">    transform: translateX(-50%) translateY(-50%);</div><div class="line">    background: url(polina.jpg) no-repeat;</div><div class="line">    background-size: cover;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>I must say this is a elegant way to approach a full width video background,<br>it helped me to build this part vey soon. However, there was an issue happened in Safari browser, <strong>it did not display in full width no matter what I tried</strong>, this took me a couple of hours until I put an poster attribute inside <code>&lt;video&gt;</code> element, the issue just disappeared, and the full video returned. (but still don’t know why…)</p>
+<h1 id="javascript"><a href="#javascript" class="headerlink" title="javascript"></a>javascript</h1><p>In this project, I tried to use javascript as less as possible,<br>just wanted to take it as a challenge for myself.<br>however, there were 2 different parts still required me</p>
+<h3 id="01-Modal"><a href="#01-Modal" class="headerlink" title="01. Modal"></a>01. Modal</h3><p>I knew there are several ways to build modal by pure css, but if I built it in that way, every time we add one more job position, I will need to add one more <strong>Modal</strong> division as well, imaging if we have 10 positions, how messy this html is gonna be….<br>Therefore, my approach was building ONE <code>&lt;div&gt;</code>, injecting different job description when triggering modal.</p>
+<h3 id="02-Layout"><a href="#02-Layout" class="headerlink" title="02. Layout"></a>02. Layout</h3><p>Since I made the position of content is <strong>absolute</strong>, the height of outer div became zero, but my approach was to let both of them have same height, I tried to find a solution to solve it in CSS way, however, I knew this might be possible, but is it worthy to spend extra time for this while you could build it in a short time with javascript, I guessed the answer is NO.<br>So, here is my solution:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var outer = document.getElementById(&apos;outer&apos;),</div><div class="line">    inner = document.getElementById(&apos;inner&apos;);</div><div class="line">    // set the height of outer div.</div><div class="line">    outer.style.height = inner.scrollHeight;</div></pre></td></tr></table></figure>
+<p>I must say <strong>scrollheight</strong> really makes my life easier.</p>
+<h1 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1><p>As I mentioned at beginning, there is nothing complex in this project and article,</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/bboys1101" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                        <li>
+                            <a href="https://www.linkedin.com/in/chia-feng-tsai-0ba1a860?trk=hp-identity-name" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                        <li>
+                            <a href="mailto:bboys1101@gmail.com" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">Original Content from Chia</p>
+                <!-- <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p> -->
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
