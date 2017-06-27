@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="About this working noteRecently, I’ve been working on rewriting jQuery into pure javascript, it wasn’t as straightforward as I thought, I actually spe">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Chia Feng Tsai">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Working Note - XML, Iterators, Immediate functions in javascript"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="CHIA BLOG"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>Working Note - XML, Iterators, Immediate functions in javascript - CHIA BLOG</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">CHIA BLOG</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="http://chiafeng.rocks/">
+                            
+                                Portfolio
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/bboys1101">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('./img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Working Note - XML, Iterators, Immediate functions in javascript</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2017-06-18
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h1 id="About-this-working-note"><a href="#About-this-working-note" class="headerlink" title="About this working note"></a>About this working note</h1><p>Recently, I’ve been working on rewriting jQuery into pure javascript, it wasn’t as straightforward as I thought, I actually spent a lot of time to digest the code, and reading Web API, I suspected it would be beneficial for me to take some note to record few things I’ve learned during this process.</p>
+<h1 id="XML-HttpRequest"><a href="#XML-HttpRequest" class="headerlink" title="XML HttpRequest"></a>XML HttpRequest</h1><p>A build-in object for all modern browsers to request data from a server, which can help us to achieve:</p>
+<ul>
+<li>Update a website without refreshing page, this could bring better user experience.</li>
+<li>Request data from server, after web pages loaded.</li>
+<li>Receive data from server, after web pages loaded.</li>
+<li>Send a data to a server, in the background.</li>
+</ul>
+<h2 id="Type-of-requests"><a href="#Type-of-requests" class="headerlink" title="Type of requests."></a>Type of requests.</h2><p>There are 2 ways of this request, <strong>asynchronously(by default)</strong> and <strong>synchronously</strong>, it is dictated by the optional third argument of <code>XMLHttpRequest.open()</code>, while it’s true or not specified, the type is asynchronously.</p>
+<h2 id="Monitoring-progress"><a href="#Monitoring-progress" class="headerlink" title="Monitoring progress"></a>Monitoring progress</h2><p>We can use addEventListener to monitor whole process, which includes <code>progress</code>, <code>load</code>, <code>error</code>, <code>abort</code>.</p>
+<h2 id="XMLHttpRequest-onreadystatechange"><a href="#XMLHttpRequest-onreadystatechange" class="headerlink" title="XMLHttpRequest.onreadystatechange"></a>XMLHttpRequest.onreadystatechange</h2><p>This is an eventHandler called whenever the <strong>readyState</strong> attribute changes.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">// Syntax</div><div class="line">XMLHttpRequest.onreadystatechange = callback;</div><div class="line"></div><div class="line">// example:</div><div class="line">var xhr = new XMLHttpRequest(),</div><div class="line">    method = &quot;GET&quot;,</div><div class="line">    url = &quot;https://developer.mozilla.org/&quot;;</div><div class="line"></div><div class="line">xhr.open(method, url, true);</div><div class="line">xhr.onreadystatechange = function () &#123;</div><div class="line">  if(xhr.readyState === XMLHttpRequest.DONE &amp;&amp; xhr.status === 200) &#123;</div><div class="line">    console.log(xhr.responseText);</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line">xhr.send();</div></pre></td></tr></table></figure>
+<h1 id="Iterators"><a href="#Iterators" class="headerlink" title="Iterators"></a>Iterators</h1><p>If we want to confirm whether the element is iterable, then we have to make sure it’s a iterators, the following function and method will return a boolean value which can tell us if the <code>obj</code> is a Iterators.<br>So next time we need to detect if the element injected into the function can go through looping, these methods can be very helpful.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function isIterable(obj) &#123;</div><div class="line">  // checks for null and undefined</div><div class="line">  if (obj == null) &#123;</div><div class="line">    return false;</div><div class="line">  &#125;</div><div class="line">  return typeof obj[Symbol.iterator] === &apos;function&apos;;</div><div class="line">&#125;</div><div class="line">// Or we can do it in a simple way</div><div class="line">Symbol.iterator in Object(obj)</div></pre></td></tr></table></figure>
+<p>Check this link[<a href="https://stackoverflow.com/questions/18884249/checking-whether-something-is-iterable" target="_blank" rel="external">https://stackoverflow.com/questions/18884249/checking-whether-something-is-iterable</a>]</p>
+<h1 id="Immediately-Invoked-Function-Expression"><a href="#Immediately-Invoked-Function-Expression" class="headerlink" title="Immediately Invoked Function Expression"></a>Immediately Invoked Function Expression</h1><p>While declaring variables in javascript, we need to make sure variables will not be polluted, which means it’s more safe to declare variables in private scope, or <strong>closure</strong>. Immediate function is the easiest way can help us to achieve the approach, however, during this process, I was confused while I saw the function with parameters, that forced me to look into how things work in this situation.</p>
+<h2 id="Parameters"><a href="#Parameters" class="headerlink" title="Parameters"></a>Parameters</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">// example</div><div class="line">(function () &#123;</div><div class="line"></div><div class="line">&#125;)();</div><div class="line"></div><div class="line">// which is equivalent to this</div><div class="line">var closureFn = function(parameter1, parameter2) &#123;</div><div class="line"> //your code here</div><div class="line">&#125;</div><div class="line">…</div><div class="line">var a, b;</div><div class="line">closureFn(a, b);</div></pre></td></tr></table></figure>
+<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/onreadystatechange" target="_blank" rel="external">https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/onreadystatechange</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol" target="_blank" rel="external">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol</a></li>
+<li><a href="https://medium.com/sons-of-javascript/javascript-closures-and-immediate-functions-81df26319b53" target="_blank" rel="external">https://medium.com/sons-of-javascript/javascript-closures-and-immediate-functions-81df26319b53</a></li>
+</ul>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/bboys1101" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                        <li>
+                            <a href="https://www.linkedin.com/in/chia-feng-tsai-0ba1a860?trk=hp-identity-name" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                        <li>
+                            <a href="mailto:bboys1101@gmail.com" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">Original Content from Chia</p>
+                <!-- <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p> -->
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
