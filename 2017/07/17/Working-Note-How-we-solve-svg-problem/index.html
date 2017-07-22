@@ -165,18 +165,18 @@
 </ol>
 <h3 id="Cons"><a href="#Cons" class="headerlink" title="Cons:"></a>Cons:</h3><ol>
 <li>We wiil send many <strong>XMLHttpRequest</strong> at same time, this could cause some issues which is hard to handle, not to mention this will damage the web performance.</li>
-<li>In this solution, you probably need to solve <strong>cross domain error</strong> if your SVG are stored in diiferent server.<br><br></li>
+<li>In this solution, you probably need to solve <strong>cross domain error</strong> if your SVG are stored in diiferent server.<br><br><br><br></li>
 </ol>
-<h1 id="Solution-02-Use-lt-object-gt-with-CSS-in-SVG-code"><a href="#Solution-02-Use-lt-object-gt-with-CSS-in-SVG-code" class="headerlink" title="Solution_02: Use &lt;object&gt; with CSS in SVG code."></a>Solution_02: Use <code>&lt;object&gt;</code> with CSS in SVG code.</h1><p>This way is quite tricky, since we can control style of SVG by writing CSS inside of it, we need to embed it by <code>object</code> tag, otherwise the CSS won’t be parsed.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// in html</div><div class="line">&lt;object width=&quot;124&quot; height=&quot;124&quot; data=&quot;./circle.svg&quot;&gt;&lt;/object&gt;</div></pre></td></tr></table></figure></p>
+<h1 id="02-Use-lt-object-gt-with-CSS-in-SVG-code"><a href="#02-Use-lt-object-gt-with-CSS-in-SVG-code" class="headerlink" title="#02: Use &lt;object&gt; with CSS in SVG code."></a>#02: Use <code>&lt;object&gt;</code> with CSS in SVG code.</h1><p>This way is quite tricky, since we can control style of SVG by writing CSS inside of it, we need to embed it by <code>object</code> tag, otherwise the CSS won’t be parsed.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// in html</div><div class="line">&lt;object width=&quot;124&quot; height=&quot;124&quot; data=&quot;./circle.svg&quot;&gt;&lt;/object&gt;</div></pre></td></tr></table></figure></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">// circle.svg</div><div class="line">&lt;svg viewBox=&quot;0 0 200 200&quot;&gt;</div><div class="line">  &lt;defs&gt;</div><div class="line">  &lt;style type=&quot;text/css&quot;&gt;</div><div class="line">    circle &#123;</div><div class="line">      fill: orange;</div><div class="line">    &#125;</div><div class="line">  &lt;/style&gt;</div><div class="line">  &lt;/defs&gt;</div><div class="line">  &lt;circle cx=&quot;100&quot; cy=&quot;100&quot; r=&quot;80&quot; /&gt;</div><div class="line">&lt;/svg&gt;</div></pre></td></tr></table></figure>
 <h3 id="Pros-1"><a href="#Pros-1" class="headerlink" title="Pros:"></a>Pros:</h3><ol>
 <li>We can control SVG by manipulaing the CSS inside it.</li>
 <li>In this solution, the html will be very <strong>clean</strong>.</li>
 </ol>
 <h3 id="Cons-1"><a href="#Cons-1" class="headerlink" title="Cons:"></a>Cons:</h3><ol>
-<li>Regarding to any SVG update, it is not maintainalbe, need to spend a lot of time and effort just for a tiny change.<br><br></li>
+<li>Regarding to any SVG update, it is not maintainalbe, need to spend a lot of time and effort just for a tiny change.<br><br><br><br></li>
 </ol>
-<h1 id="Solution-03-Use-lt-object-gt-with-CSS-Link-in-SVG-code"><a href="#Solution-03-Use-lt-object-gt-with-CSS-Link-in-SVG-code" class="headerlink" title="Solution_03: Use &lt;object&gt; with CSS Link in SVG code."></a>Solution_03: Use <code>&lt;object&gt;</code> with CSS Link in SVG code.</h1><p>Very similiar to the above one, but including a style sheet instead of writing code directly.</p>
+<h1 id="03-Use-lt-object-gt-with-CSS-Link-in-SVG-code"><a href="#03-Use-lt-object-gt-with-CSS-Link-in-SVG-code" class="headerlink" title="#03: Use &lt;object&gt; with CSS Link in SVG code."></a>#03: Use <code>&lt;object&gt;</code> with CSS Link in SVG code.</h1><p>Very similiar to the above one, but including a style sheet instead of writing code directly.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// in html</div><div class="line">&lt;object width=&quot;124&quot; height=&quot;124&quot; data=&quot;./circle.svg&quot;&gt;&lt;/object&gt;</div></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">// circle.svg</div><div class="line">&lt;svg viewBox=&quot;0 0 200 200&quot;&gt;</div><div class="line">  &lt;defs&gt;</div><div class="line">  &lt;?xml-stylesheet href=&quot;my-style.css&quot;?&gt;</div><div class="line">  &lt;/defs&gt;</div><div class="line">  &lt;circle cx=&quot;100&quot; cy=&quot;100&quot; r=&quot;80&quot; /&gt;</div><div class="line">&lt;/svg&gt;</div></pre></td></tr></table></figure>
 <h3 id="Pros-2"><a href="#Pros-2" class="headerlink" title="Pros:"></a>Pros:</h3><ol>
@@ -184,7 +184,7 @@
 <li>Since all the SVG icons are controlled by same one CSS file, it’s very maintainable.</li>
 </ol>
 <h3 id="Cons-2"><a href="#Cons-2" class="headerlink" title="Cons:"></a>Cons:</h3><ol>
-<li>There will be a lof requests for same CSS file, this is really meaningless and unnecessary.<br><br></li>
+<li>There will be a lof requests for same CSS file, this is really meaningless and unnecessary.<br><br><br><br></li>
 </ol>
 <h1 id="04-Save-SVG-as-partial"><a href="#04-Save-SVG-as-partial" class="headerlink" title="#04: Save SVG as partial."></a>#04: Save SVG as <code>partial</code>.</h1><p>If your project is using <strong>Mustache.js</strong> like us (or other template language), we can save each SVG as an individual file, and include them whenever we need.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">// component.mustache</div><div class="line">&lt;h1&gt;Your Title&lt;/h1&gt;</div><div class="line">&#123;&#123;&gt; svg-icon-circle.mustache&#125;&#125;</div><div class="line">&#123;&#123;&gt; svg-icon-Rectangle.mustache&#125;&#125;</div><div class="line">............</div><div class="line">............</div></pre></td></tr></table></figure>
@@ -197,7 +197,7 @@
 </ol>
 <h3 id="Cons-3"><a href="#Cons-3" class="headerlink" title="Cons:"></a>Cons:</h3><ol>
 <li>One of our approach is storing all the assets in server side, we access it only through API,<br>apparently this solution might be in the opposite direction from us.</li>
-<li>This seems increasing the complexity of project structure(but it’s ok for me).<br><br></li>
+<li>This seems increasing the complexity of project structure(but it’s ok for me).<br><br><br><br></li>
 </ol>
 <h1 id="05-Store-all-the-inline-SVG-code-in-backend"><a href="#05-Store-all-the-inline-SVG-code-in-backend" class="headerlink" title="#05: Store all the inline SVG code in backend."></a>#05: Store all the inline SVG code in backend.</h1><p>Storing all the inlined SVG code in backend, apply it to template through API data.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// component.mustache</div><div class="line">&lt;div class=&quot;wrap&quot;&gt;</div><div class="line">  &lt;span&gt;&#123;&#123;iconVariable&#125;&#125;&lt;/span&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
@@ -207,7 +207,7 @@
 <li>No need to send any extra request, or run js functions, totally beneficial for performance.</li>
 </ol>
 <h3 id="Cons-4"><a href="#Cons-4" class="headerlink" title="Cons:"></a>Cons:</h3><ol>
-<li>API result is ugly, but not a big deal.<br><br></li>
+<li>API result is ugly, but not a big deal.<br><br><br><br></li>
 </ol>
 <h1 id="06-Image-sprite"><a href="#06-Image-sprite" class="headerlink" title="#06: Image sprite."></a>#06: Image sprite.</h1><p>Put all SVG icons into a single image, implement it as background image, show different icons and behaviour by manipulating <code>background-position</code>.</p>
 <h3 id="Pros-5"><a href="#Pros-5" class="headerlink" title="Pros:"></a>Pros:</h3><ol>
