@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="Why we talk about SVG?In my recent task, I need to implement whole collection of SVG icons into our product site, usually I will include SVG as an &amp;lt">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Chia Feng Tsai">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Working Note - How we solve svg implementation task."/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="CHIA BLOG"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>Working Note - How we solve svg implementation task. - CHIA BLOG</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">CHIA BLOG</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="http://chiafeng.rocks/">
+                            
+                                Portfolio
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/bboys1101">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('./img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Working Note - How we solve svg implementation task.</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2017-07-17
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h1 id="Why-we-talk-about-SVG"><a href="#Why-we-talk-about-SVG" class="headerlink" title="Why we talk about SVG?"></a>Why we talk about SVG?</h1><p>In my recent task, I need to implement whole collection of SVG icons into our product site, usually I will include SVG as an <code>&lt;img&gt;</code>, and control it’s size or position by CSS, however, in this case, we need to take care more situations as below.</p>
+<p><img src="./img/img-01.jpg" alt=""></p>
+<p>According to this behaviour, it needs to have <strong>hover effect</strong>, and appear different color in different condition, keep the flexibility as much as possible, so I think the reasonable approach would be <strong>inlining SVG</strong> directily, in that way we can control it’s color by manipulating CSS properties.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">// html</div><div class="line">&lt;svg ...&gt;</div><div class="line">  &lt;path class=&quot;pig&quot; .../&gt;</div><div class="line">&lt;/svg&gt;</div><div class="line"></div><div class="line"></div><div class="line">// CSS</div><div class="line">.pig &#123;</div><div class="line">  fill: #000000;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.pig:hover &#123;</div><div class="line">  fill: #D80027;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.pig &#123;</div><div class="line">  fill: #FFD500;	</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>So we solve this problem? Well.. I hope so, but the pain point is we have a lot of SVG icons, try to image putting more than 20 SVG in the same file, what a big chunk of xml code it is, not easy to read for any one, and if there is one SVG icon located in several part of website needs to be updated, think about how terrifying it would be, our code will become a monster that no one would dare to get close and touch it.</p>
+<p>Because of this, we had many discussions about how we can build this in current structure, fortunately we came out with a solution that every one was quite happy with it , since I felt the whole process is really educational, and interesting, I think it’s a good idea to record it in this article, to share the solutions and ideas we’ve proposed.<br><br></p>
+<h1 id="01-lt-img-gt-tag"><a href="#01-lt-img-gt-tag" class="headerlink" title="#01: &lt;img&gt; tag."></a>#01: <code>&lt;img&gt;</code> tag.</h1><p>Embed a svg as a normal image by <code>&lt;img&gt;</code> tag, using js code to send a <strong>XMLHttpRequest</strong> to each url for getting SVG code, then replacing the <code>&lt;img&gt;</code> tag, so you will have inline SVG in html after page initialized.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line"> * Replace all SVG images with inline SVG</div><div class="line"> */</div><div class="line">jQuery(&apos;img.svg&apos;).each(function()&#123;</div><div class="line">    var $img = jQuery(this);</div><div class="line">    var imgID = $img.attr(&apos;id&apos;);</div><div class="line">    var imgClass = $img.attr(&apos;class&apos;);</div><div class="line">    var imgURL = $img.attr(&apos;src&apos;);</div><div class="line"></div><div class="line">    jQuery.get(imgURL, function(data) &#123;</div><div class="line">        // Get the SVG tag, ignore the rest</div><div class="line">        var $svg = jQuery(data).find(&apos;svg&apos;);</div><div class="line"></div><div class="line">        // Add replaced image&apos;s ID to the new SVG</div><div class="line">        if(typeof imgID !== &apos;undefined&apos;) &#123;</div><div class="line">            $svg = $svg.attr(&apos;id&apos;, imgID);</div><div class="line">        &#125;</div><div class="line">        // Add replaced image&apos;s classes to the new SVG</div><div class="line">        if(typeof imgClass !== &apos;undefined&apos;) &#123;</div><div class="line">            $svg = $svg.attr(&apos;class&apos;, imgClass+&apos; replaced-svg&apos;);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        // Remove any invalid XML tags as per http://validator.w3.org</div><div class="line">        $svg = $svg.removeAttr(&apos;xmlns:a&apos;);</div><div class="line"></div><div class="line">        // Replace image with new SVG</div><div class="line">        $img.replaceWith($svg);</div><div class="line"></div><div class="line">    &#125;, &apos;xml&apos;);</div><div class="line"></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>This code and idea is from <a href="https://goo.gl/P1A4bB" target="_blank" rel="external">this answer</a> on stackoverflow, take a look the example code, which will help you realize the concept.</p>
+<h3 id="Pros"><a href="#Pros" class="headerlink" title="Pros:"></a>Pros:</h3><ol>
+<li>We can control SVG as we need, since we can have inline SVG in html.</li>
+<li>In this solution, the html will be very <strong>clean</strong> and <strong>maintainable</strong>.</li>
+</ol>
+<h3 id="Cons"><a href="#Cons" class="headerlink" title="Cons:"></a>Cons:</h3><ol>
+<li>We wiil send many <strong>XMLHttpRequest</strong> at same time, this could cause some issues which is hard to handle, not to mention this will damage the web performance.</li>
+<li>In this solution, you probably need to solve <strong>cross domain error</strong> if your SVG are stored in diiferent server.<br><br></li>
+</ol>
+<h1 id="Solution-02-Use-lt-object-gt-with-CSS-in-SVG-code"><a href="#Solution-02-Use-lt-object-gt-with-CSS-in-SVG-code" class="headerlink" title="Solution_02: Use &lt;object&gt; with CSS in SVG code."></a>Solution_02: Use <code>&lt;object&gt;</code> with CSS in SVG code.</h1><p>This way is quite tricky, since we can control style of SVG by writing CSS inside of it, we need to embed it by <code>object</code> tag, otherwise the CSS won’t be parsed.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// in html</div><div class="line">&lt;object width=&quot;124&quot; height=&quot;124&quot; data=&quot;./circle.svg&quot;&gt;&lt;/object&gt;</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">// circle.svg</div><div class="line">&lt;svg viewBox=&quot;0 0 200 200&quot;&gt;</div><div class="line">  &lt;defs&gt;</div><div class="line">  &lt;style type=&quot;text/css&quot;&gt;</div><div class="line">    circle &#123;</div><div class="line">      fill: orange;</div><div class="line">    &#125;</div><div class="line">  &lt;/style&gt;</div><div class="line">  &lt;/defs&gt;</div><div class="line">  &lt;circle cx=&quot;100&quot; cy=&quot;100&quot; r=&quot;80&quot; /&gt;</div><div class="line">&lt;/svg&gt;</div></pre></td></tr></table></figure>
+<h3 id="Pros-1"><a href="#Pros-1" class="headerlink" title="Pros:"></a>Pros:</h3><ol>
+<li>We can control SVG by manipulaing the CSS inside it.</li>
+<li>In this solution, the html will be very <strong>clean</strong>.</li>
+</ol>
+<h3 id="Cons-1"><a href="#Cons-1" class="headerlink" title="Cons:"></a>Cons:</h3><ol>
+<li>Regarding to any SVG update, it is not maintainalbe, need to spend a lot of time and effort just for a tiny change.<br><br></li>
+</ol>
+<h1 id="Solution-03-Use-lt-object-gt-with-CSS-Link-in-SVG-code"><a href="#Solution-03-Use-lt-object-gt-with-CSS-Link-in-SVG-code" class="headerlink" title="Solution_03: Use &lt;object&gt; with CSS Link in SVG code."></a>Solution_03: Use <code>&lt;object&gt;</code> with CSS Link in SVG code.</h1><p>Very similiar to the above one, but including a style sheet instead of writing code directly.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// in html</div><div class="line">&lt;object width=&quot;124&quot; height=&quot;124&quot; data=&quot;./circle.svg&quot;&gt;&lt;/object&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">// circle.svg</div><div class="line">&lt;svg viewBox=&quot;0 0 200 200&quot;&gt;</div><div class="line">  &lt;defs&gt;</div><div class="line">  &lt;?xml-stylesheet href=&quot;my-style.css&quot;?&gt;</div><div class="line">  &lt;/defs&gt;</div><div class="line">  &lt;circle cx=&quot;100&quot; cy=&quot;100&quot; r=&quot;80&quot; /&gt;</div><div class="line">&lt;/svg&gt;</div></pre></td></tr></table></figure>
+<h3 id="Pros-2"><a href="#Pros-2" class="headerlink" title="Pros:"></a>Pros:</h3><ol>
+<li>We can control SVG just by manipulaing CSS file.</li>
+<li>Since all the SVG icons are controlled by same one CSS file, it’s very maintainable.</li>
+</ol>
+<h3 id="Cons-2"><a href="#Cons-2" class="headerlink" title="Cons:"></a>Cons:</h3><ol>
+<li>There will be a lof requests for same CSS file, this is really meaningless and unnecessary.<br><br></li>
+</ol>
+<h1 id="04-Save-SVG-as-partial"><a href="#04-Save-SVG-as-partial" class="headerlink" title="#04: Save SVG as partial."></a>#04: Save SVG as <code>partial</code>.</h1><p>If your project is using <strong>Mustache.js</strong> like us (or other template language), we can save each SVG as an individual file, and include them whenever we need.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">// component.mustache</div><div class="line">&lt;h1&gt;Your Title&lt;/h1&gt;</div><div class="line">&#123;&#123;&gt; svg-icon-circle.mustache&#125;&#125;</div><div class="line">&#123;&#123;&gt; svg-icon-Rectangle.mustache&#125;&#125;</div><div class="line">............</div><div class="line">............</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// partial/svg-icon-circle.mustache</div><div class="line">&lt;svg viewBox=&quot;0 0 200 200&quot;&gt;</div><div class="line">  &lt;circle cx=&quot;100&quot; cy=&quot;100&quot; r=&quot;80&quot;/&gt;</div><div class="line">&lt;/svg&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// partial/svg-icon-Rectangle.mustache</div><div class="line">&lt;svg width=&quot;400&quot; height=&quot;110&quot;&gt;</div><div class="line">  &lt;rect width=&quot;300&quot; height=&quot;100&quot;/&gt;</div><div class="line">&lt;/svg&gt;</div></pre></td></tr></table></figure>
+<h3 id="Pros-3"><a href="#Pros-3" class="headerlink" title="Pros:"></a>Pros:</h3><ol>
+<li>We can control SVG just by manipulaing CSS file.</li>
+<li>Since all the SVG icons are controlled by same one CSS file, it’s very maintainable.</li>
+<li>html code looks very clean, and it’s a very flexible way to implement SVG.</li>
+</ol>
+<h3 id="Cons-3"><a href="#Cons-3" class="headerlink" title="Cons:"></a>Cons:</h3><ol>
+<li>One of our approach is storing all the assets in server side, we access it only through API,<br>apparently this solution might be in the opposite direction from us.</li>
+<li>This seems increasing the complexity of project structure(but it’s ok for me).<br><br></li>
+</ol>
+<h1 id="05-Store-all-the-inline-SVG-code-in-backend"><a href="#05-Store-all-the-inline-SVG-code-in-backend" class="headerlink" title="#05: Store all the inline SVG code in backend."></a>#05: Store all the inline SVG code in backend.</h1><p>Storing all the inlined SVG code in backend, apply it to template through API data.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// component.mustache</div><div class="line">&lt;div class=&quot;wrap&quot;&gt;</div><div class="line">  &lt;span&gt;&#123;&#123;iconVariable&#125;&#125;&lt;/span&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<h3 id="Pros-4"><a href="#Pros-4" class="headerlink" title="Pros:"></a>Pros:</h3><ol>
+<li>We can control SVG just by CSS since we will have inline SVG in html.</li>
+<li>Very handy and maintainable, nearly no pain for Front End Dev.</li>
+<li>No need to send any extra request, or run js functions, totally beneficial for performance.</li>
+</ol>
+<h3 id="Cons-4"><a href="#Cons-4" class="headerlink" title="Cons:"></a>Cons:</h3><ol>
+<li>API result is ugly, but not a big deal.<br><br></li>
+</ol>
+<h1 id="06-Image-sprite"><a href="#06-Image-sprite" class="headerlink" title="#06: Image sprite."></a>#06: Image sprite.</h1><p>Put all SVG icons into a single image, implement it as background image, show different icons and behaviour by manipulating <code>background-position</code>.</p>
+<h3 id="Pros-5"><a href="#Pros-5" class="headerlink" title="Pros:"></a>Pros:</h3><ol>
+<li>We can control SVG by manipulaing CSS file.</li>
+<li>Avoid any potential issue from programming way.</li>
+</ol>
+<h3 id="Cons-5"><a href="#Cons-5" class="headerlink" title="Cons:"></a>Cons:</h3><ol>
+<li>Require designer put way more effort to maintain.</li>
+<li>Color transition will look janky.</li>
+<li>Front End Dev will need to spend more time for tweaking position.<br><br></li>
+</ol>
+<h1 id="07-Create-a-custom-ICON-FONT"><a href="#07-Create-a-custom-ICON-FONT" class="headerlink" title="#07: Create a custom ICON FONT."></a>#07: Create a custom ICON FONT.</h1><p>I would say this is the most ambitious solution we’ve ever talked about, it won’t be easy, won’t be quick, but once it’s done, this privately owned icon font will make every one’s life easier.</p>
+<h3 id="Pros-6"><a href="#Pros-6" class="headerlink" title="Pros:"></a>Pros:</h3><ol>
+<li>We can easily control the icons in anyway we want.</li>
+<li>It sounds fucking cool to have our own icon font.</li>
+</ol>
+<h3 id="Cons-6"><a href="#Cons-6" class="headerlink" title="Cons:"></a>Cons:</h3><ol>
+<li>This will take a lof time and effort to complete.</li>
+<li>Need to spend extra time to write document, to tell every one how to use and which icon is which.</li>
+<li>Require more time and effort while adding more icons to SVG collection.<br><br></li>
+</ol>
+<h1 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion:"></a>Conclusion:</h1><p>We choosed <code>#05-Backend</code> as our solution which every one is happy with, it not just meets our requirement, it’s also very straightforward and easy to maintain, not to mention the benefits for Front End Dev.<br>Meanwhile, I personally would also recommend <code>#04-Partial</code> if you are also using tempalte language in project.</p>
+<!-- References
+How to Add Scalable Vector Graphics (SVG) to Your Web Page
+https://www.sitepoint.com/add-svg-to-web-page/ -->
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/bboys1101" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                        <li>
+                            <a href="https://www.linkedin.com/in/chia-feng-tsai-0ba1a860?trk=hp-identity-name" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                        <li>
+                            <a href="mailto:bboys1101@gmail.com" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">Original Content from Chia</p>
+                <!-- <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p> -->
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
