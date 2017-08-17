@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="Why we need to talk about CSS Architecture?Our current status.
+Large scale and code base, long running project.
+Several developers of differing specia">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Chia Feng Tsai">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="CSS Architecture (1) - Style Guide"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="CHIA BLOG"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>CSS Architecture (1) - Style Guide - CHIA BLOG</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">CHIA BLOG</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="http://chiafeng.rocks/">
+                            
+                                Portfolio
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/bboys1101">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('./img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>CSS Architecture (1) - Style Guide</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2017-08-17
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h1 id="Why-we-need-to-talk-about-CSS-Architecture"><a href="#Why-we-need-to-talk-about-CSS-Architecture" class="headerlink" title="Why we need to talk about CSS Architecture?"></a>Why we need to talk about CSS Architecture?</h1><h3 id="Our-current-status"><a href="#Our-current-status" class="headerlink" title="Our current status."></a>Our current status.</h3><ol>
+<li>Large scale and code base, long running project.</li>
+<li>Several developers of differing specialities and abilities.</li>
+</ol>
+<h3 id="What-issues-or-inconvenience-I’ve-had"><a href="#What-issues-or-inconvenience-I’ve-had" class="headerlink" title="What issues or inconvenience I’ve had."></a>What issues or inconvenience I’ve had.</h3><ol>
+<li>Coding with uncertainty, always worrying my writing style is not readable and inconsistent.</li>
+<li>Painful while naming new variables.</li>
+<li>Several writing style across code base.</li>
+<li>Need a list telling which browsers needs to be supported, e.g. &gt; IE10</li>
+</ol>
+<h3 id="Beneficial-approaching-for-CSS-code"><a href="#Beneficial-approaching-for-CSS-code" class="headerlink" title="Beneficial approaching for CSS code."></a>Beneficial approaching for CSS code.</h3><ol>
+<li>Has a clear writing guideline and instruction to follow.</li>
+<li>Looks clean and tidy, so it would be easy to read and maintain.</li>
+<li>Comments in detail, it tells Devs things they need to be aware.</li>
+</ol>
+<h3 id="Further-it-would-be-great-if-these-could-be-achieved-across-codebase"><a href="#Further-it-would-be-great-if-these-could-be-achieved-across-codebase" class="headerlink" title="Further, it would be great if these could be achieved across codebase."></a>Further, it would be great if these could be achieved across codebase.</h3><ol>
+<li>Set the standard for code quality.</li>
+<li>Promote and keep consistency.</li>
+<li>Code will always look and feel familiar to all members.</li>
+</ol>
+<h3 id="How"><a href="#How" class="headerlink" title="How:"></a>How:</h3><ol>
+<li>CSS Style Guide</li>
+<li>Variable Naming Convention</li>
+<li>Vocabulary Consistency</li>
+</ol>
+<h1 id="Punters-com-au-CSS-Style-Guide"><a href="#Punters-com-au-CSS-Style-Guide" class="headerlink" title="Punters.com.au CSS Style Guide"></a>Punters.com.au CSS Style Guide</h1><blockquote>
+<p>“Every line of code should appear to be written by a single person, no matter the number of contributors.” —@mdo</p>
+</blockquote>
+<h2 id="General-rules-for-CSS"><a href="#General-rules-for-CSS" class="headerlink" title="General rules for CSS"></a>General rules for CSS</h2><h3 id="Do"><a href="#Do" class="headerlink" title="Do"></a>Do</h3><ol>
+<li>Use soft tabs with two spaces.</li>
+<li>Put spaces after <code>:</code> in property declarations, e.g. <code>color: red;</code> instead of <code>color:red;</code></li>
+<li>Put spaces before <code>{</code> in rule declarations, e.g. <code>.modal {</code> instead of <code>.modal{</code></li>
+<li>Write your CSS one line per property.</li>
+<li>Add a line break after <code>}</code> closing rule declarations.</li>
+<li>When grouping selectors, keep individual selectors on a single line.</li>
+<li>Place closing braces <code>}</code> on a new line.</li>
+<li>Add a new line at the end of .less files.</li>
+<li>End all declarations with a semi-colon.</li>
+<li>Lowercase all hex values, e.g., <code>#ffffff</code>. for me lowercase letters are much easier to discern when scanning a document as they tend to have more unique shapes.</li>
+<li>Quote attribute values in selectors, e.g., <code>input[type=&quot;text&quot;]</code>. <a href="https://mathiasbynens.be/notes/unquoted-attribute-values#css" target="_blank" rel="external">They’re only optional in some cases</a>, and it’s a good practice for consistency.</li>
+<li>Put spaces before and after child selector <code>div &gt; span</code> instead of <code>div&gt;span</code>.</li>
+<li>Use BEM as naming convention.(See below).</li>
+<li>Always use double quotes.</li>
+</ol>
+<h3 id="Don’ts"><a href="#Don’ts" class="headerlink" title="Don’ts"></a>Don’ts</h3><ol>
+<li>Avoid using HTML tags in CSS selectors(with some exceptions like CSS resets).</li>
+<li>Don’t use ids in selectors, for example, <code>#button</code> is overly specific compared to <code>.button</code>, and is much harder to override, read more about the headaches associated with IDs in CSS <a href="http://csswizardry.com/2011/09/when-using-ids-can-be-a-pain-in-the-class/" target="_blank" rel="external">here</a>.</li>
+<li>Don’t nest more than 3 levels deep, because nesting selectors increases specificity, meaning that overriding any CSS set needs to be targeted with an even more specific selector. This quickly becomes a significant maintenance issue, also damage to selector performance. However, prefer using nesting as a convenience to extend the parent selector over targeting nested elements, or pseudo selectors and state selectors, e.g. nesting <code>:hover</code>, <code>:focus</code>, <code>::before</code>, etc. is OK.</li>
+<li>Never ever use <code>!important</code>, it greatly increases the power of a CSS declaration, making it extremely tough to override in the future. It’s only possible to override with another <code>!important</code> declaration later in the cascade, harmful for maintaince.</li>
+<li>Avoid shorthand properties (unless you really need them), it can be tempting to use, for instance, <code>background: #ffffff</code> instead of <code>background-color: #ffffff</code>, but doing so overrides other values encapsulated by the shorthand property. (In this case, <code>background-image</code> and its associative properties are set to “none”. You can see more details <a href="https://csswizardry.com/2016/12/css-shorthand-syntax-considered-an-anti-pattern/" target="_blank" rel="external">here</a>.</li>
+<li>Avoid specifying units for zero values, e.g., <code>margin: 0;</code> instead of <code>margin: 0px;</code>.</li>
+<li>Don’t include spaces after commas within rgb(), rgba(), hsl(), hsla(), or rect() values. This helps differentiate multiple color values (comma, no space) from multiple property values (comma with space). E.g. <code>rgba(255,255,255,.8)</code> instead of <code>rgba(255, 255, 255, .8)</code>.</li>
+<li>Don’t prefix property values or color parameters with a leading zero (E.g., .5 instead of 0.5 and -.5px instead of -0.5px).</li>
+</ol>
+<hr>
+<h3 id="BEM"><a href="#BEM" class="headerlink" title="BEM"></a>BEM</h3><p><strong>Block:</strong><br>Unique, meaningful names for a logical unit of style. Avoid excessive shorthand.</p>
+<ul>
+<li>Good: <code>.alert-box</code> or <code>.recents-intro</code></li>
+<li>Bad: <code>.feature</code> or <code>.content</code></li>
+</ul>
+<p><strong>Element:</strong><br>Styles that only apply to children of a block. Elements can also be blocks themselves. Class name is a concatenation of the block name, two underscores and the element name. Examples:</p>
+<ul>
+<li><code>.alert-box__main</code></li>
+<li><code>.expanding-section__section</code></li>
+</ul>
+<p><strong>Modifier:</strong><br>Override or extend the base styles of a block or element with modifier styles. Class name is a concatenation of the block (or element) name, two hyphens and the modifier name. Examples:</p>
+<ul>
+<li><code>.alert-box__main--active</code></li>
+<li><code>.expanding-section__section--expanded</code></li>
+</ul>
+<h3 id="BEM-Best-practices"><a href="#BEM-Best-practices" class="headerlink" title="BEM Best practices"></a>BEM Best practices</h3><p>Let each classname take their responsibility.</p>
+<ul>
+<li>Good: <code>&lt;div class=&quot;my-block my-block--modifier&quot;&gt;</code></li>
+<li>Bad: <code>&lt;div class=&quot;my-block--modifier&quot;&gt;</code></li>
+</ul>
+<p>Don’t create elements inside elements. If you find yourself needing this, consider converting your element into a block.</p>
+<ul>
+<li>Bad: <code>.alert-box__close__btn</code></li>
+</ul>
+<p>Choose your modifiers wisely. These two rules have very different meaning:</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.block--modifier</span> <span class="selector-class">.block__element</span> &#123; <span class="attribute">color</span>: red; &#125;</div><div class="line"><span class="selector-class">.block__element--modifier</span> &#123; <span class="attribute">color</span>: red; &#125;</div></pre></td></tr></table></figure>
+<hr>
+<h2 id="Rule-Ordering"><a href="#Rule-Ordering" class="headerlink" title="Rule Ordering"></a>Rule Ordering</h2><p>Properties and nested declarations should appear in the following order, with line breaks between groups:</p>
+<ol>
+<li>Rule declarations.</li>
+<li><p>Grouping mixins at the end makes it easier to read the entire selector.</p>
+</li>
+<li><p>Pseudo-elements:</p>
+<pre><code>::after, ::before, ::selection, etc.
+</code></pre></li>
+<li>Pseudo-selectors:<pre><code>:hover, :focus, :active, etc.
+</code></pre></li>
+<li>Modifier classes</li>
+<li>Nested elements</li>
+</ol>
+<p>Here’s a comprehensive example:</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="selector-class">.btn</span> &#123;</div><div class="line">  <span class="attribute">color</span>: <span class="variable">@white</span>;</div><div class="line">  <span class="selector-class">.transition</span>(color .<span class="number">5s</span> ease);</div><div class="line"></div><div class="line">  <span class="selector-tag">&amp;</span><span class="selector-pseudo">::before</span> &#123;</div><div class="line">    <span class="attribute">content</span>: <span class="string">""</span>;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="selector-tag">&amp;</span><span class="selector-pseudo">:focus</span>, </div><div class="line">  <span class="selector-tag">&amp;</span><span class="selector-pseudo">:hover</span> &#123;</div><div class="line">    <span class="attribute">color</span>: <span class="variable">@red</span>;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="selector-class">.btn--big</span> &#123;</div><div class="line">    <span class="attribute">padding</span>: <span class="number">12px</span> <span class="number">24px</span>;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  &gt; <span class="selector-class">.c-icon</span> &#123;</div><div class="line">    <span class="attribute">margin-right</span>: <span class="number">6px</span>;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<hr>
+<h1 id="JS-Hook"><a href="#JS-Hook" class="headerlink" title="JS Hook"></a>JS Hook</h1><p>Avoid using same class name for CSS selector and JS, because this would cause issue while we need to adjust any one of both, not to mention refactoring, usually this would make Devs spend extra effort and time for developing.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">// bad</div><div class="line">&lt;div class=&quot;example-class&quot;&gt;&lt;/div&gt;</div><div class="line"></div><div class="line">.example-class &#123;</div><div class="line">  prop-01: ...;</div><div class="line">  prop-02: ...;</div><div class="line">&#125;</div><div class="line"></div><div class="line">document.querySelector(&apos;.example-class&apos;);</div><div class="line"></div><div class="line"></div><div class="line">// Good</div><div class="line">&lt;div class=&quot;example-class js-example-class&quot;&gt;&lt;/div&gt;</div><div class="line"></div><div class="line">.example-class &#123;</div><div class="line">  prop-01: ...;</div><div class="line">  prop-02: ...;</div><div class="line">&#125;</div><div class="line"></div><div class="line">document.querySelector(&apos;.js-example-class&apos;);</div></pre></td></tr></table></figure>
+<hr>
+<h1 id="Section-Title"><a href="#Section-Title" class="headerlink" title="Section Title"></a>Section Title</h1><p>Begin every new major section of a CSS project with a title like below:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">/*------------------------------------*\</div><div class="line">  #A-SECTION</div><div class="line">\*------------------------------------*/</div><div class="line"></div><div class="line">.selector &#123; &#125;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">/*------------------------------------*\</div><div class="line">  #ANOTHER-SECTION</div><div class="line">\*------------------------------------*/</div><div class="line"></div><div class="line">/**</div><div class="line"> * Comment</div><div class="line"> */</div><div class="line"></div><div class="line">.another-selector &#123; &#125;</div></pre></td></tr></table></figure>
+<p>The title of the section is prefixed with a hash (#) symbol to allow us to perform more targeted searches: instead of searching for just A-SECTION, which may yield many results—a more scoped search of #A-SECTION should return only the section in question.</p>
+<hr>
+<h2 id="Media-Queries"><a href="#Media-Queries" class="headerlink" title="Media Queries"></a>Media Queries</h2><p>Media queries should be within the CSS selector as per SMACSS</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">.selector &#123;</div><div class="line">  float: left;</div><div class="line"></div><div class="line">  @media only screen and (max-width: 767px) &#123;</div><div class="line">    float: none;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Create variables for frequently used breakpoints</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="variable">@mobile:</span> <span class="string">"max-width: 767px"</span>;</div><div class="line"></div><div class="line"><span class="selector-class">.selector</span> &#123;</div><div class="line">  <span class="attribute">float</span>: left;</div><div class="line"></div><div class="line">  <span class="keyword">@media</span> only screen and (<span class="variable">@mobile</span>) &#123;</div><div class="line">    <span class="attribute">float</span>: none;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<hr>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ul>
+<li><a href="https://cssguidelin.co/" target="_blank" rel="external">High-level advice and guidelines for writing sane, manageable, scalable CSS</a></li>
+<li><a href="https://github.com/necolas/idiomatic-css" target="_blank" rel="external">idiomatic-css</a></li>
+<li><a href="https://github.com/dropbox/css-style-guide" target="_blank" rel="external">Dropbox (S)CSS Style Guide</a></li>
+<li><a href="https://github.com/airbnb/css#oocss-and-bem" target="_blank" rel="external">Airbnb CSS / Sass Styleguide</a></li>
+</ul>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/bboys1101" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                        <li>
+                            <a href="https://www.linkedin.com/in/chia-feng-tsai-0ba1a860?trk=hp-identity-name" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                        <li>
+                            <a href="mailto:bboys1101@gmail.com" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">Original Content from Chia</p>
+                <!-- <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p> -->
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
