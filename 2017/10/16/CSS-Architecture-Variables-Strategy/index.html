@@ -10,6 +10,8 @@
 
     <!--Description-->
     
+        <meta name="description" content="Why we talk about Color Variables Naming Strategy?What issues or inconvenience I’ve had.While maintaining color variables, one thing I felt really pai">
+    
 
     <!--Author-->
     
@@ -18,7 +20,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="CHIA BLOG"/>
+        <meta property="og:title" content="CSS Architecture (2) - Color Variables Naming Strategy"/>
     
 
     <!--Open Graph Description-->
@@ -29,7 +31,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -40,7 +42,7 @@
 
     <!-- Title -->
     
-    <title>page - Archiv - CHIA BLOG</title>
+    <title>CSS Architecture (2) - Color Variables Naming Strategy - CHIA BLOG</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -115,104 +117,67 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('./img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>Archiv</h1>
+                <div class="post-heading">
+                    <h1>CSS Architecture (2) - Color Variables Naming Strategy</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2017-10-16
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2016/10/17/Shortcut/">
-        <h1 class="post-title archive">
-            Working Note -- Compress Shortcut
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-10-17
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2016/09/29/Building_a_Simple_Toggle_UI/">
-        <h1 class="post-title archive">
-            Building a Simple Toggle UI
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-09-29
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2016/09/22/BEM/">
-        <h1 class="post-title archive">
-            Learning BEM
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-09-22
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2016/08/09/Journey_of_SVG(1)/">
-        <h1 class="post-title archive">
-            Journey of SVG -- (1) "Drawing"
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-08-09
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2016/07/31/Intro/">
-        <h1 class="post-title archive">
-            Build A Blog on Git-Page with Hexo -- (1)
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-07-31
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-        <li class="previous"><a href="/archives/">&larr;  Nächste Seite</a></li>
-    
-    
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h1 id="Why-we-talk-about-Color-Variables-Naming-Strategy"><a href="#Why-we-talk-about-Color-Variables-Naming-Strategy" class="headerlink" title="Why we talk about Color Variables Naming Strategy?"></a>Why we talk about Color Variables Naming Strategy?</h1><h3 id="What-issues-or-inconvenience-I’ve-had"><a href="#What-issues-or-inconvenience-I’ve-had" class="headerlink" title="What issues or inconvenience I’ve had."></a>What issues or inconvenience I’ve had.</h3><p>While maintaining color variables, one thing I felt really painful is naming new colors. For example, if we need to add a new grey color which is for menu background, usually it would be named as <code>menuBackgroundGrey</code> straightforwardly, but what if this grey is also for the text color?</p>
+<p>Then we will see this:<br><code>color: @menuBackgroundGrey;</code> or <code>background-color: @naviTextGrey</code></p>
+<p>It does look bit weird, but I think this is still fine, what really painful is there are always multiple menus existing in website. so we need to add more adjective words to separate them like this…<br><code>@menuBackgroundGreyLight</code>, <code>@menuBackgroundGreyDark</code> …😵</p>
+<p>In that way, we can just hope we wouldn’t have more grey variables when available vocabularies is about to running out. (finger crossed🤞)<br><br></p>
+<h1 id="Naming-Color-by-Objects"><a href="#Naming-Color-by-Objects" class="headerlink" title="Naming Color by Objects."></a>Naming Color by Objects.</h1><p>THEREFORE, I’ve decided to add a new naming convention to maintain all colors variables, which is <code>naming colors by Objects</code>, the example is below:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">/*------------------------------------*\</div><div class="line">  #Grey (by Animals)</div><div class="line">\*------------------------------------*/</div><div class="line"></div><div class="line">@gorilla                : #100f1a;</div><div class="line">@totoro                 : #dadada;</div><div class="line">@polarBear              : #ededeb;</div><div class="line">@greyHound              : #cccccc;</div><div class="line">@alpacas                : #efefef;</div><div class="line">@wallaby                : #DDDBE4;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">/*------------------------------------*\</div><div class="line">  #Blue (by Bottled Water Brands)</div><div class="line">\*------------------------------------*/</div><div class="line"></div><div class="line">@fiji                   : #4e92df;</div><div class="line">@evian                  : #4a90e2;</div><div class="line">@voss                   : #2490c8;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">/*------------------------------------*\</div><div class="line">  #Red (by Fruits)</div><div class="line">\*------------------------------------*/</div><div class="line"></div><div class="line">@strawberry             : #ae1114;</div><div class="line">@plum                   : #ae1114;</div><div class="line">@raspberry              : #ca171a;</div><div class="line">@apple                  : #d32727;</div><div class="line">@tomato                 : #f73e2d;</div></pre></td></tr></table></figure>
+<h3 id="Benefits-of-this-approach"><a href="#Benefits-of-this-approach" class="headerlink" title="Benefits of this approach."></a>Benefits of this approach.</h3><ul>
+<li>Less likely to run out of vocabularies</li>
+<li>It’s actually more straightforward while using.</li>
+<li>More maintainable, and guess what, more fun for coding !!</li>
 </ul>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
         </div>
     </div>
-</div>
-
-
+</article>
 
     <!-- Footer -->
     <hr />

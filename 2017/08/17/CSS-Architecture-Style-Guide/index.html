@@ -10,9 +10,9 @@
 
     <!--Description-->
     
-        <meta name="description" content="Why we need to talk about CSS Architecture?Our current status.
+        <meta name="description" content="Why we talk about CSS Architecture?Our current status.
 Large scale and code base, long running project.
-Several developers of differing specia">
+Several developers of differing specialities a">
     
 
     <!--Author-->
@@ -153,12 +153,12 @@ Several developers of differing specia">
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <h1 id="Why-we-need-to-talk-about-CSS-Architecture"><a href="#Why-we-need-to-talk-about-CSS-Architecture" class="headerlink" title="Why we need to talk about CSS Architecture?"></a>Why we need to talk about CSS Architecture?</h1><h3 id="Our-current-status"><a href="#Our-current-status" class="headerlink" title="Our current status."></a>Our current status.</h3><ol>
+                <h1 id="Why-we-talk-about-CSS-Architecture"><a href="#Why-we-talk-about-CSS-Architecture" class="headerlink" title="Why we talk about CSS Architecture?"></a>Why we talk about CSS Architecture?</h1><h3 id="Our-current-status"><a href="#Our-current-status" class="headerlink" title="Our current status."></a>Our current status.</h3><ol>
 <li>Large scale and code base, long running project.</li>
 <li>Several developers of differing specialities and abilities.</li>
 </ol>
 <h3 id="What-issues-or-inconvenience-I’ve-had"><a href="#What-issues-or-inconvenience-I’ve-had" class="headerlink" title="What issues or inconvenience I’ve had."></a>What issues or inconvenience I’ve had.</h3><ol>
-<li>Coding with uncertainty, always worrying my writing style is not readable and inconsistent.</li>
+<li>Coding with uncertainty, worrying my code style is not readable and inconsistent.</li>
 <li>Painful while naming new variables.</li>
 <li>Several writing style across code base.</li>
 <li>Need a list telling which browsers needs to be supported, e.g. &gt; IE10</li>
@@ -168,7 +168,7 @@ Several developers of differing specia">
 <li>Looks clean and tidy, so it would be easy to read and maintain.</li>
 <li>Comments in detail, it tells Devs things they need to be aware.</li>
 </ol>
-<h3 id="Further-it-would-be-great-if-these-could-be-achieved-across-codebase"><a href="#Further-it-would-be-great-if-these-could-be-achieved-across-codebase" class="headerlink" title="Further, it would be great if these could be achieved across codebase."></a>Further, it would be great if these could be achieved across codebase.</h3><ol>
+<h3 id="Further-it-would-be-great-to-achieve-these-across-codebase"><a href="#Further-it-would-be-great-to-achieve-these-across-codebase" class="headerlink" title="Further, it would be great to achieve these across codebase."></a>Further, it would be great to achieve these across codebase.</h3><ol>
 <li>Set the standard for code quality.</li>
 <li>Promote and keep consistency.</li>
 <li>Code will always look and feel familiar to all members.</li>
@@ -176,9 +176,10 @@ Several developers of differing specia">
 <h3 id="How"><a href="#How" class="headerlink" title="How:"></a>How:</h3><ol>
 <li>CSS Style Guide</li>
 <li>Variable Naming Convention</li>
-<li>Vocabulary Consistency</li>
+<li>Vocabulary Consistency<br><br></li>
 </ol>
-<h1 id="Punters-com-au-CSS-Style-Guide"><a href="#Punters-com-au-CSS-Style-Guide" class="headerlink" title="Punters.com.au CSS Style Guide"></a>Punters.com.au CSS Style Guide</h1><blockquote>
+<!-- # Punters.com.au CSS Style Guide -->
+<blockquote>
 <p>“Every line of code should appear to be written by a single person, no matter the number of contributors.” —@mdo</p>
 </blockquote>
 <h2 id="General-rules-for-CSS"><a href="#General-rules-for-CSS" class="headerlink" title="General rules for CSS"></a>General rules for CSS</h2><h3 id="Do"><a href="#Do" class="headerlink" title="Do"></a>Do</h3><ol>
@@ -257,6 +258,7 @@ Several developers of differing specia">
 <h1 id="Section-Title"><a href="#Section-Title" class="headerlink" title="Section Title"></a>Section Title</h1><p>Begin every new major section of a CSS project with a title like below:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">/*------------------------------------*\</div><div class="line">  #A-SECTION</div><div class="line">\*------------------------------------*/</div><div class="line"></div><div class="line">.selector &#123; &#125;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">/*------------------------------------*\</div><div class="line">  #ANOTHER-SECTION</div><div class="line">\*------------------------------------*/</div><div class="line"></div><div class="line">/**</div><div class="line"> * Comment</div><div class="line"> */</div><div class="line"></div><div class="line">.another-selector &#123; &#125;</div></pre></td></tr></table></figure>
 <p>The title of the section is prefixed with a hash (#) symbol to allow us to perform more targeted searches: instead of searching for just A-SECTION, which may yield many results—a more scoped search of #A-SECTION should return only the section in question.</p>
+<p>Use <strong>5</strong> empty lines to separate each section.</p>
 <hr>
 <h2 id="Media-Queries"><a href="#Media-Queries" class="headerlink" title="Media Queries"></a>Media Queries</h2><p>Media queries should be within the CSS selector as per SMACSS</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">.selector &#123;</div><div class="line">  float: left;</div><div class="line"></div><div class="line">  @media only screen and (max-width: 767px) &#123;</div><div class="line">    float: none;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
